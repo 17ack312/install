@@ -1,0 +1,448 @@
+wog='\033[1;100m'  
+off='\033[0m' 
+fgr='\033[1;90m'    
+fr='\033[1;31m'    
+fg='\033[1;32m'   
+fy='\033[1;33m'
+fb='\033[1;34m'
+fp='\033[1;35m'
+fs='\033[1;36m'
+fw='\033[1;37m'    
+bow='\033[1;07m'
+br='\033[0;41m'
+bg='\033[0;42m'
+by='\033[0;43m'
+bb='\033[0;44m'
+bp='\033[0;45m'
+bs='\033[0;46m'
+bw='\033[0;47m'
+bk='\033[0;30m'
+un='\033[0;04m'
+it='\033[0;03m'
+echo -e "\n"
+echo -e $fg"*******************************"
+echo -e $fg"****      written by      *****"
+echo -e $fg"*******************************"
+echo -e $fp================================
+echo       Rajdeep  |figlet
+echo -e $fp================================
+echo -e $wog$fw"\nenter your choice: \n1.requirements\t\t2.nmap\n3.metasploit\t\t4.hydra\n5.Tool-X\t\t6.DarkFly-Tool\n7.ngrok\t\t\t8.smsbomb\n9.servers\t\t10.sqlmap\n11.termux-style\t\t12.shellphish\n13.wireshark\t\t14.Tmux-Bunch\n15.calculator\t\t16.view code\n17.rename the script\n\t\t00.exit \n\nyour choice is : \e[0m\c"
+echo -e $fr"\c"
+read c
+case $c in
+     00 )
+	cd   
+	echo -e $fg "\n******************************\n"   
+	echo -e $fg"***** thanks for using *******"        
+	echo -e $fg "\n******************************\n"
+	echo -e $off
+
+	exit
+	      ;;
+     1 )
+	echo -e $fg"Installing Requirements,This may take some times\n"  
+	apt update && apt upgrade -y
+
+	apt install -y git
+	apt install -y vim
+	echo -e $fg
+	apt install -y clang
+	apt install -y g++
+	apt install -y php 
+	apt install -y ruby 
+	apt install -y ruby-dev
+	apt install -y ruby-ri     
+	echo -e $fg  
+	apt install -y x11-repo
+	apt install -y root-repo 
+	apt install -y unstable-repo 
+	apt install -y openssl 
+	apt install -y openssh 
+	apt install -y openssl-tool
+        echo -e $fg
+        apt install -y gnupg
+	apt install -y termux-auth
+	apt install -y termux-apt-repo
+	apt install -y proot
+	apt install -y php-dev
+	apt install -y php-apache
+        echo -e $fg 
+	apt install -y postgresql 
+	apt install -y openssl-dev 
+	apt install -y postgresql-dev 
+	apt install -y apache2
+	apt install -y mariadb
+	apt install -y nginx 
+	apt install -y zip
+	apt install -y gzip 
+	apt install -y p7zip
+	apt install -y bzip2
+        echo -e $fg
+        apt install -y x264
+	apt install -y x265 
+	apt install -y xarchiver
+	apt install -y w3m 
+	apt install -y unzip
+	apt install -y unrar
+	apt install -y mtools
+	apt install -y sqlite
+	apt install -y tmux
+	apt install -y tmate
+        echo -e $fg
+	apt install -y cowsay
+	apt install -y sl
+#	apt install -y apache2-dev 
+	apt install -y apk-tools
+	apt install -y apksigner
+        echo -e $fg
+        apt install -y termux-auth-dev
+	apt install -y php-fpm 
+	apt install -y php-pgsap
+	apt install -y shtool 
+	apt install -y science-repo
+	apt install -y mathomatic
+	apt install -y oathtool
+        echo -e $fg
+        apt install -y oathtool-dev
+	apt install -y debianutils 
+	apt install -y ranger
+	apt install -y alpine
+	apt install -y neovim
+	apt install -y fish
+	apt install -y sed       
+	echo -e $fg    
+	apt install -y rhash-dev 
+	apt install -y google-glog 
+	apt install -y google-glog-dev         
+	echo -e $fg
+        apt install -y python
+	apt install -y python2 
+	apt install -y python-dev 
+	apt install -y python2-dev
+	apt install -y python2-six 
+	apt install -y python2-xlib
+	echo -e $fg
+        apt install -y ncurses-utils
+	apt install -y figlet
+	apt install -y toilet
+        echo -e $fg"\nsetting up python.." 
+	pip install --upgrade pip
+        pip2 install --upgrade pip
+        pip install requests
+        pip install request
+        pip2 install requests  
+	pip2 install request
+        pip install bs4
+        pip2 install bs4
+	echo -e $fg 
+	apt update && apt upgrade -y
+	apt autoremove
+	apt full-upgrade
+
+        echo -e $fy"\nRequirements fulfilled" 
+#	bash install
+	;;
+      2 ) 
+	echo -e $fb"\n please wait...\n don't do any thing,its automatic\n"
+	echo -e $fg
+	apt  update && apt upgrade -y
+	echo -e $fg
+	apt autoremove
+	echo -e $fg
+	apt install -y nmap
+	echo -e $fy"\n NMAP is  successfully installed\ntype 'nmap' to run NMAP\n"  
+#	bash install
+	;;
+      3 )
+	echo -e $fb"\n please wait...\n don't do any thing,its automatic\n"$fg
+
+	apt update && apt upgrade -y
+	echo -e $fg
+        apt install -y gnupg unstable-repo
+	echo -e $fg
+	apt update && apt upgrade -y
+	echo -e $fg
+	apt autoremove
+	echo -e $fg
+	apt install -y metasploit
+	echo -e $fy"\n METASPLOIT FRAMEWORK is successfully installed.\n type 'msfconsole'to run METASPLOIT\n"
+#	bash install
+	;;
+      4 )  
+	 echo -e $fb"\n please wait...\n don't do any thing,its automatic\n"
+	 echo -e $fg
+	 apt update && apt -y upgrade 
+	 echo -e $fg
+	 apt autoremove
+	 echo -e $fg
+	 apt install -y hydra
+	 echo -e $fy"\nHYDRA is successfully installed.\ntype 'hydra' to run HYDRA\n"  
+#	 bash install
+	 ;;
+
+      5 )echo -e $fb"\n please wait...\n"     
+	echo -e $fg
+	apt update && apt upgrade -y
+	echo -e $fg 
+	apt autoremove
+	echo -e $fg
+	git clone https://github.com/Rajkumrdusad/Tool-X
+	cd Tool-X
+	chmod +x *
+	./install.aex     
+#	bash install
+	;;
+     6 ) 
+	echo -e $fb"\nplease wait .... \n"
+	echo -e $fg
+	apt update && apt upgrade -y
+	echo -e $fg
+	git clone https://github.com/Ranginang67/DarkFly-Tool	
+	cd DarkFly-Tool
+	chmod +x *
+	echo -e $fg
+	python2 install.py
+#bash install
+	;;
+ 
+      7 )
+	echo -e $fy"\nwait while we set up ngrok for you.. \n"
+	echo -e $fg
+	apt update && apt upgrade -y
+	echo -e $fg
+	apt autoremove   
+	echo -e $fg
+	git clone https://github.com/17ack312/rajdeep.git
+	cd rajdeep
+	chmod 777 ngrok.zip
+	unzip ngrok.zip
+	cp ngrok /$HOME
+	cd
+	echo -e $fg
+	chmod +x ngrok
+	echo -e $fg
+	./ngrok authtoken 1UwT8jUzq2setFF6imISdU90Ewv_2b5WQXXwoQtwCvYY3NjaH
+	rm -rf rajdeep
+	echo -e $fy"\n ngrok successfully set up\n" 
+#	bash install
+	;;
+
+      8 )
+	echo -e $fb"\nwait while we set up smsbomb for you.. \n"
+	echo -e $fg
+        apt update && apt upgrade -y 
+	echo -e $fg
+	apt autoremove
+	echo -e $fg
+	git clone https://github.com/17ack312/smsbomb.git
+	cd smsbomb
+	cp smsbomb.php /$HOME
+	cd
+	chmod +x smsbomb.php
+	rm -rf smsbomb
+	echo -e $fy"\n type 'php smsbomb.php' to run the script\n"  
+#	bash install
+	;;
+
+      9 )
+	echo -e $fb"\n please wait while we install apache,mysql and nginx servers for you\n"
+	echo -e $fg
+	apt update && apt upgrade -y 
+	echo -e $fg
+	apt autoremove 
+	echo -e $fs"\ninstalling apache 2..."
+	echo -e $fg
+	apt install -y apache2
+	echo -e $fs"installing mysql..."
+	echo -e $fg
+	apt install -y mariadb 
+	echo -e $fs"installing nginx"
+	echo -e $fg
+	apt install -y nginx
+#	bash install
+	;;
+
+      10 )
+	echo -e $fb"\n please wait..SQLMAP is being installed..\n"
+	echo -e $fg
+	apt update && apt upgrade -y
+#	rm -rf sqlmap
+	echo -e $fg
+	git clone https://github.com/sqlmapproject/sqlmap
+	cd sqlmap
+	cd
+	echo -e $fy"\n sqlmap is successfully installed \n"  
+#bash install
+	;;
+
+     11 )
+	 echo -e $fb"\ntermux style will be installed.."
+	 echo -e $fg
+	 apt update && apt upgrade -y
+	 echo -e $fg
+	 apt autoremove
+	 echo -e $fg
+	 git clone https://github.com/adi1090x/termux-style
+	 cd termux-style
+	 chmod +x *
+	 ./setup
+	 echo -e $fy"\ntermux-style is successfully installed \n"  
+#	 bash install
+	 ;;
+     12 )
+	     echo -e $fb"\n shell phish is being installed.."
+	     echo -e $fg
+	     apt update && apt upgrade -y
+	     #rm -rf shellphish
+	     echo -e $fg
+	     git clone https://github.com/thelinuxchoice/shellphish
+	     cd shellphish
+	     chmod +x *
+	     cd
+	     echo -e $fy"\n shellphish is successfully installed"  
+#	     bash install
+	     ;;
+     13 )
+	     echo -e $fb"\nplease wait while we install wireshark for you.."
+	echo -e $fg
+	apt update && apt upgrade
+	echo -e $fg
+	apt install -y wireshark-gtk
+	echo -e $fg
+	apt install -y wireshark-gtk-dev
+	echo -e $fy"\n wireshark installed successfully"         
+#	bash install
+	;;
+     14 ) echo -e $fb"\nplease wait while we load Tmux-Bunch for you\n"
+	     echo -e $fg
+	     apt update && apt upgrade -y
+	     echo -e $fg
+	     apt install -y axel
+	     echo -e $fg
+	     echo -e $fg
+	     axel https://github.com/Hax4us/Tmux-Bunch/releases/download/v2.7/Tmux-Bunch-2.7.tar.gz
+	     echo -e $fg
+	     tar -xf Tmux-Bunch-2.7.tar.gz
+	     cd Tmux-Bunch
+	     chmod +x *
+	     echo -e $fg"\nplease wait"
+	     bash setup
+	     cd
+	     rm -rf Tmux-Bunch-2.7.tar.gz
+	     cd
+	     cd Tmux-Bunch
+	     echo -e $fy"\n run tmuxbunch to use\n"
+	     cd  
+	 #    bash install
+	;;
+
+     15 )echo -e $fb "\ncalculator will be ready for you"
+	cd
+echo -e $fg
+	apt update && apt upgrade -y
+	echo -e $fg
+echo -e $fg
+	apt autoremove
+	cd
+	if [ -d progs ]
+	then
+		cd
+		cd progs
+		rm cal.c
+	else
+		cd
+		mkdir progs
+		fi
+	cd
+	echo -e $fg
+	git clone https://github.com/17ack312/calculator
+	cd calculator
+ 	cp calc.c /$HOME/progs
+	cp calculator.sh /$HOME
+	cd
+	rm -rf calculator
+	chmod +x *
+	echo -e $fy "\ncalculator successfully set up.\n type sh calculator.sh to use it"      
+#	bash install
+	;;
+     16 ) 
+     x=0998
+     y=5998
+     echo -e $fr"\n[*]enter id :\c "$fg
+     echo -e $fg" \c "
+     read id
+     if [ $id -ne $x ]
+     then 
+     echo -e $fy
+     echo -e $fy Invalid ID |cowsay
+     else
+     echo -e $fr"\n[*]enter password :\c " 
+     echo -e $bk" \c "     
+     read pass
+     echo -e $fg
+        if [ $pass -eq $y ]
+	then
+        cd 
+        vim install
+	else
+	echo -e $fy
+        echo -e $fy invalid Password |cowsay
+        fi
+     fi
+     echo -e $off
+    # bash install
+     ;;
+
+     17 )
+     echo -e $fg"\nenter name : \c"
+     read name
+     cp install $name
+     chmod +x *
+     echo -e $fr"do you want to delete previous version of this file?(y/n):\c"
+     read wnt
+     case $wnt in
+     y)
+     cd 
+     cp install /$HOME/progs
+     rm install
+     ;;
+     Y)
+     cd
+     cp install /$HOME/progs
+     rm install
+     ;;
+     esac
+     #bash install
+     ;;
+
+      * ) 
+	echo -e $fy$br"\n**************************\n****** WRONG CHOICE ******\n**************************\nGood bye :)"$off""
+
+	bash install
+	;;
+esac
+
+if [ $c -ne 00 ]
+then
+echo -e $fy"Do you want to continue? (Y/N) : \c"
+echo -e $fg"\c"
+read cont
+case $cont in
+Y)
+bash install
+;;
+y)
+bash install
+;;
+n)
+echo -e $off
+exit
+;;
+N)
+echo -e $off
+exit
+;;
+esac
+echo -e $off
+fi
+

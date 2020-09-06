@@ -1,0 +1,6 @@
+echo -e " enter website: \c "
+read w
+
+cd
+cd golismero 
+python2 golismero.py scan $w -e sqlmap,heartbleed,fingerprint_web,sslscan,nikto,nmap,xsser,zone_transfer,spiderfoot,brute_url_suffixes,plecost,dns,dns_malware,exploitdb,zone_transfer,robots,spider,brute_directories,brute_url_prefixes,brute_url_extensions,theharvester,brute_url_permutations,brute_url_predictables,shodan -o $w.txt 

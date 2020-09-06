@@ -1,0 +1,334 @@
+wog='\033[1;100m'
+off='\033[0m'
+fgr='\033[1;90m'
+fr='\033[1;31m'
+fg='\033[1;32m'
+fy='\033[1;33m'
+fb='\033[1;34m'
+fp='\033[1;35m'
+fs='\033[1;36m'
+fw='\033[1;37m'
+bow='\033[1;07m'
+br='\033[0;41m'
+bg='\033[0;42m'
+by='\033[0;43m'
+bb='\033[0;44m'
+bp='\033[0;45m'
+bs='\033[0;46m'
+bw='\033[0;47m'
+bk='\033[0;30m'
+un='\033[0;04m'
+it='\033[0;03m'
+clear 
+
+echo -e $fs"[=========================================]"$off
+echo -e $fs"|              MODIFIED DIRB              |"$off 
+echo -e $fs"|         Modified  by RAJDEEP BASU       |"$off 
+echo -e $fs"[=========================================]"$off
+echo -e $off 
+
+if [ -d /$HOME/dirb/outlog ]
+then
+echo
+else
+cd && cd dirb 
+mkdir outlog
+fi 
+
+
+echo -e $wog"ENTER URL :"$off $fb"\c"
+read u
+echo -e $off
+
+echo -e $fy" enter file name :  " $fg"\c"  $off 
+read f 
+
+if [ -e /$HOME/dirb/site_log.txt ]
+then 
+echo -e $fp" $u \n\n" >> /$HOME/dirb/site_log.txt
+
+else
+
+cd && cd /$HOME/dirb 
+touch site_log.txt 
+echo -e $fp" $u \n\n" >> /$HOME/dirb/site_log.txt
+fi 
+
+cd 
+cd /$HOME/dirb/outlog 
+mkdir $f 
+
+
+
+#WORDLISTS
+
+c1='//data/data/com.termux/files/home/dirb/wordlists/common.txt'
+c2='//data/data/com.termux/files/home/dirb/wordlists/indexes.txt'
+c3='//data/data/com.termux/files/home/dirb/wordlists/big.txt'
+c4='//data/data/com.termux/files/home/dirb/wordlists/extensions_common.txt'
+c5='//data/data/com.termux/files/home/dirb/wordlists/small.txt'
+c6='//data/data/com.termux/files/home/dirb/wordlists/spanish.txt'
+
+v1='//data/data/com.termux/files/home/dirb/wordlists/vulns/apache.txt'        
+v2='//data/data/com.termux/files/home/dirb/wordlists/vulns/hyperion.txt'
+v3='//data/data/com.termux/files/home/dirb/wordlists/vulns/sap.txt'
+v4='//data/data/com.termux/files/home/dirb/wordlists/vulns/axis.txt'         
+v5='//data/data/com.termux/files/home/dirb/wordlists/vulns/iis.txt'
+v6='//data/data/com.termux/files/home/dirb/wordlists/vulns/sharepoint.txt'
+v7='//data/data/com.termux/files/home/dirb/wordlists/vulns/cgis.txt'
+v8='//data/data/com.termux/files/home/dirb/wordlists/vulns/iplanet.txt'
+v9='//data/data/com.termux/files/home/dirb/wordlists/vulns/sunas.txt'
+v10='//data/data/com.termux/files/home/dirb/wordlists/vulns/coldfusion.txt'
+v11='//data/data/com.termux/files/home/dirb/wordlists/vulns/jboss.txt'
+v12='//data/data/com.termux/files/home/dirb/wordlists/vulns/tests.txt'
+v13='//data/data/com.termux/files/home/dirb/wordlists/vulns/domino.txt'
+v14='//data/data/com.termux/files/home/dirb/wordlists/vulns/jersey.txt'
+v15='//data/data/com.termux/files/home/dirb/wordlists/vulns/tomcat.txt'
+v16='//data/data/com.termux/files/home/dirb/wordlists/vulns/fatwire.txt'
+v17='//data/data/com.termux/files/home/dirb/wordlists/vulns/jrun.txt'
+v18='//data/data/com.termux/files/home/dirb/wordlists/vulns/vignette.txt'
+v19='//data/data/com.termux/files/home/dirb/wordlists/vulns/fatwire_pagenames.txt'
+v20='//data/data/com.termux/files/home/dirb/wordlists/vulns/netware.txt'
+v21='//data/data/com.termux/files/home/dirb/wordlists/vulns/weblogic.txt'
+v22='//data/data/com.termux/files/home/dirb/wordlists/vulns/frontpage.txt'
+v23='//data/data/com.termux/files/home/dirb/wordlists/vulns/oracle.txt'
+v24='//data/data/com.termux/files/home/dirb/wordlists/vulns/websphere.txt'
+v25='//data/data/com.termux/files/home/dirb/wordlists/vulns/hpsmh.txt'
+v26='//data/data/com.termux/files/home/dirb/wordlists/vulns/ror.txt'
+
+o1='//data/data/com.termux/files/home/dirb/wordlists/others/best1050.txt'
+o2='//data/data/com.termux/files/home/dirb/wordlists/others/best110.txt'
+o3='//data/data/com.termux/files/home/dirb/wordlists/others/best15.txt' 
+o4='//data/data/com.termux/files/home/dirb/wordlists/others/names.txt'
+
+s1='//data/data/com.termux/files/home/dirb/wordlists/stress/alphanum_case.txt'
+s2='//data/data/com.termux/files/home/dirb/wordlists/stress/doble_uri_hex.txt' 
+s3='//data/data/com.termux/files/home/dirb/wordlists/stress/uri_hex.txt'
+s4='//data/data/com.termux/files/home/dirb/wordlists/stress/alphanum_case_extra.txt' 
+s5='//data/data/com.termux/files/home/dirb/wordlists/stress/test_ext.txt'
+s6='//data/data/com.termux/files/home /dirb/wordlists/stress/char.txt'
+s7='//data/data/com.termux/files/home/dirb/wordlists/stress/unicode.txt'
+
+
+echo -e $fp" site : $u "
+
+
+echo -e $fb "wordlist :" $fs" $c1 " $fg 
+ 
+dirb $u $c1 -o //data/data/com.termux/files/home/dirb/outlog/$f/c1.txt
+
+
+echo -e $fb "wordlist :" $fs" $c2 " $fg 
+
+dirb $u $c2 -o //data/data/com.termux/files/home/dirb/outlog/$f/c2.txt
+
+
+echo -e $fb "wordlist :" $fs" $c3 " $fg
+
+dirb $u$c3 -o //data/data/com.termux/files/home/dirb/outlog/$f/c3.txt
+
+
+echo -e $fb "wordlist :" $fs" $c4 " $fg
+
+dirb $u $c4 -o //data/data/com.termux/files/home/dirb/outlog/$f/c4.txt
+
+
+echo -e $fb "wordlist :" $fs" $c5 " $fg
+
+dirb $u $c5 -o //data/data/com.termux/files/home/dirb/outlog/$f/c5.txt
+
+
+echo -e $fb "wordlist :" $fs" $c6 " $fg
+
+dirb $u $c6 -o //data/data/com.termux/files/home/dirb/outlog/$f/c6.txt
+
+
+echo -e $fb "wordlist :" $fs" $v1 " $fg
+
+dirb $u $v1 -o //data/data/com.termux/files/home/dirb/outlog/$f/v1.txt
+
+
+echo -e $fb "wordlist :" $fs" $v2 " $fg
+
+dirb $u $v2 -o //data/data/com.termux/files/home/dirb/outlog/$f/v2.txt
+
+
+echo -e $fb "wordlist :" $fs" $v3 " $fg
+
+dirb $u $v3 -o //data/data/com.termux/files/home/dirb/outlog/$f/v3.txt
+
+
+echo -e $fb "wordlist :" $fs" $v4 " $fg
+
+dirb $u $v4 -o //data/data/com.termux/files/home/dirb/outlog/$f/v4.txt
+
+
+echo -e $fb "wordlist :" $fs" $v5 " $fg
+
+dirb $u $v5 -o //data/data/com.termux/files/home/dirb/outlog/$f/v5.txt
+
+
+echo -e $fb "wordlist :" $fs" $v6 " $fg
+
+dirb $u $v6 -o //data/data/com.termux/files/home/dirb/outlog/$f/v6.txt
+
+
+echo -e $fb "wordlist :" $fs" $v7 " $fg
+
+dirb $u $v7 -o //data/data/com.termux/files/home/dirb/outlog/$f/v7.txt
+
+
+echo -e $fb "wordlist :" $fs" $v8 " $fg
+
+dirb $u $v8 -o //data/data/com.termux/files/home/dirb/outlog/$f/v8.txt
+
+
+echo -e $fb "wordlist :" $fs" $v9 " $fg
+
+dirb $u $v9 -o //data/data/com.termux/files/home/dirb/outlog/$f/v9.txt
+
+
+echo -e $fb "wordlist :" $fs" $v10 " $fg
+
+
+dirb $u $v10 -o //data/data/com.termux/files/home/dirb/outlog/$f/v10.txt
+
+
+echo -e $fb "wordlist :" $fs" $v11 " $fg
+
+dirb $u $v11 -o //data/data/com.termux/files/home/dirb/outlog/$f/v11.txt
+
+
+echo -e $fb "wordlist :" $fs" $v12 " $fg
+
+dirb $u $v12 -o //data/data/com.termux/files/home/dirb/outlog/$f/v12.txt
+
+
+echo -e $fb "wordlist :" $fs" $v13 " $fg
+
+dirb $u $v13 -o //data/data/com.termux/files/home/dirb/outlog/$f/v13.txt
+
+
+echo -e $fb "wordlist :" $fs" $v14 " $fg
+
+dirb $u $v14 -o //data/data/com.termux/files/home/dirb/outlog/$f/v14.txt
+
+
+echo -e $fb "wordlist :" $fs" $v15 " $fg
+
+dirb $u $v15 -o //data/data/com.termux/files/home/dirb/outlog/$f/v15.txt
+
+
+echo -e $fb "wordlist :" $fs" $v17 " $fg
+
+dirb $u $v16 -o //data/data/com.termux/files/home/dirb/outlog/$f/v16.txt
+
+
+echo -e $fb "wordlist :" $fs" $v18 " $fg
+
+dirb $u $v17 -o //data/data/com.termux/files/home/dirb/outlog/$f/v17.txt
+
+
+echo -e $fb "wordlist :" $fs" $v19 " $fg
+
+dirb $u $v18 -o //data/data/com.termux/files/home/dirb/outlog/$f/v18.txt
+
+
+echo -e $fb "wordlist :" $fs" $v19 " $fg
+
+dirb $u $v19 -o //data/data/com.termux/files/home/dirb/outlog/$f/v19.txt
+
+
+echo -e $fb "wordlist :" $fs" $v20 " $fg
+
+dirb $u $v20 -o //data/data/com.termux/files/home/dirb/outlog/$f/v20.txt
+
+
+echo -e $fb "wordlist :" $fs" $v21 " $fg
+
+dirb $u $v21 -o //data/data/com.termux/files/home/dirb/outlog/$f/v21.txt
+
+
+echo -e $fb "wordlist :" $fs" $v22 " $fg
+
+dirb $u $v22 -o //data/data/com.termux/files/home/dirb/outlog/$f/v22.txt
+
+
+echo -e $fb "wordlist :" $fs" $v23 " $fg
+
+dirb $u $v23 -o //data/data/com.termux/files/home/dirb/outlog/$f/v23.txt
+
+
+echo -e $fb "wordlist :" $fs" $v24 " $fg
+
+dirb $u $v24 -o //data/data/com.termux/files/home/dirb/outlog/$f/v24.txt
+
+
+echo -e $fb "wordlist :" $fs" $v25 " $fg
+
+dirb $u $v25 -o //data/data/com.termux/files/home/dirb/outlog/$f/v25.txt
+
+
+echo -e $fb "wordlist :" $fs" $v26 " $fg
+
+dirb $u $v26 -o //data/data/com.termux/files/home/dirb/outlog/$d/v26.txt
+
+
+echo -e $fb "wordlist :" $fs" $o1  " $fg
+
+dirb $u $o1 -o //data/data/com.termux/files/home/dirb/outlog/$f/o1.txt
+
+
+echo -e $fb "wordlist :" $fs" $o2  " $fg
+
+dirb $u $o2 -o //data/data/com.termux/files/home/dirb/outlog/$f/o2.txt
+
+
+echo -e $fb "wordlist :" $fs" $o3  " $fg
+
+dirb $u $o3 -o //data/data/com.termux/files/home/dirb/outlog/$f/o3.txt
+
+
+echo -e $fb "wordlist :" $fs" $o4 " $fg
+
+dirb $u $o4 -o //data/data/com.termux/files/home/dirb/outlog/$f/o4.txt
+
+
+echo -e $fb "wordlist :" $fs" $s1  " $fg
+
+dirb $u $s1 -o //data/data/com.termux/files/home/dirb/outlog/$f/s1.txt
+
+
+echo -e $fb "wordlist :" $fs" $s2  " $fg
+
+dirb $u $s2 -o //data/data/com.termux/files/home/dirb/outlog/$f/s2.txt
+
+
+echo -e $fb "wordlist :" $fs" $s3  " $fg
+
+dirb $u $s3 -o //data/data/com.termux/files/home/dirb/outlog/$f/s3.txt
+
+
+echo -e $fb "wordlist :" $fs" $s4  " $fg
+
+dirb $u $s4 -o //data/data/com.termux/files/home/dirb/outlog/$f/s4.txt
+
+
+echo -e $fb "wordlist :" $fs" $s5  " $fg
+
+dirb $u $s5 -o //data/data/com.termux/files/home/dirb/outlog/$f/s5.txt
+
+
+echo -e $fb "wordlist :" $fs" $s6 " $fg
+
+dirb $u $s6 -o //data/data/com.termux/files/home/dirb/outlog/$f/s6.txt
+
+
+echo -e $fb "wordlist :" $fs" $s7 " $fg
+
+dirb $u $s7 -o //data/data/com.termux/files/home/dirb/outlog/$f/s7.txt
+
+
+
+echo -e $off ""
+

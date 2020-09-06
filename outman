@@ -1,0 +1,29 @@
+
+cd
+cd sqlmap
+
+if [ -d outlog ]
+then 
+echo 
+else
+mkdir outlog 
+fi
+
+if [ -d temp ]
+then 
+echo 
+else
+mkdir temp 
+fi 
+
+cd && cd /$HOME/sqlmap/temp 
+if [ -e /$HOME/sqlmap/temp/current_site.txt ]
+then
+rm -rf current_site.txt 
+fi
+
+if [ -e /$HOME/sqlmap/temp/current_db.txt ]
+then
+rm -rf current_db.txt
+fi
+

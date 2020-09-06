@@ -1,0 +1,1 @@
+ sqlmap  -u $1 --risk=3 --level=5 --ignore-proxy --random-agent --threads=5 --no-cast --dbs 
